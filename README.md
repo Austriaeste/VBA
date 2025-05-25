@@ -1,40 +1,37 @@
 # PowerPoint Font Changer Macro
 
-## 目的
-PowerPointを用いたスライド作成においてフォントを"MS 明朝"に一括処理できるマクロを作成致しました。
+## Purpose
+This macro was created to batch-change the font of all text in a PowerPoint presentation to "MS Mincho."
 
-## 動作確認
+## Tested Environment
+Verified to work with Microsoft 365.
 
-Microsoft 365で検証済みです。
+## How to Run the Macro
 
-## マクロの実行手順
+1. **Enable the Developer Tab**:
+   - Open PowerPoint and go to `File` > `Options` > `Customize Ribbon`.
+   - Check the box for `Developer` and click `OK`.
 
-1. **開発タブを有効にする**:
-    - PowerPointを開き、`ファイル` > `オプション` > `リボンのユーザー設定`を選択します。
-    - `開発`にチェックを入れて、`OK`をクリックします。
+2. **Add the Macro**:
+   - Click the `Developer` tab, then select `Macros` > `Visual Basic`.
+   - Go to `Insert` > `Module` and paste the macro code provided below.
+   - Save the file by selecting `File` > `Save`, choosing the `PowerPoint Macro-Enabled Presentation (*.pptm)` format.
 
-2. **マクロを追加する**:
-    - `開発`タブをクリックし、`マクロ` > `Visual Basic`を選択します。
-    - `挿入` > `標準モジュール`を選択し、上記のマクロコードを貼り付けます。
-    - `ファイル` > `保存`を選択し、ファイル形式を`PowerPoint マクロ有効プレゼンテーション (*.pptm)`に設定して保存します。
+3. **Trust Center Settings**:
+   - Go to `File` > `Options` > `Trust Center` > `Trust Center Settings`.
+   - Under `Macro Settings`, select `Enable all macros` (note: this poses a security risk, so revert this setting after use).
+   - Under `Trusted Locations`, add the folder where the macro-enabled file is saved.
 
-3. **トラストセンターの設定**:
-    - `ファイル` > `オプション` > `トラストセンター` > `トラストセンターの設定`を選択します。
-    - `マクロの設定`を選択し、`すべてのマクロを有効にする`にチェックを入れます（セキュリティリスクがあるため、使用後は元に戻すことをお勧めします）。
-    - `信頼できる場所`を選択し、マクロを含むファイルを保存するフォルダを追加します。
+4. **Run the Macro**:
+   - Click the `Developer` tab and select `Macros`.
+   - Choose `ChangeFontToMSMincho` and click `Run`.
 
-4. **マクロの実行**:
-    - `開発`タブをクリックし、`マクロ`を選択します。
-    - `ChangeFontToMSMincho`を選択し、`実行`をクリックします。
+Following these steps will change the font of all text frames, tables, and grouped shapes in the PowerPoint presentation to "MS Mincho."
 
-この手順に従うことで、PowerPointのプレゼン資料内のすべてのテキストフレーム、表、グループ化されたシェイプのフォントを一括で"MS 明朝"に変更することができます。
+## Benefits
+The font-changing process is encapsulated in a function, making it easy to modify for other fonts, which enhances maintainability.
 
-
-## メリット
-
-テキストフレームのフォントを変更する処理を関数でまとめましたので、他のフォントに変更する場合も保守が楽だと思っています。
-
-## マクロコード
+## Macro Code
 
 ```vba
 Option Explicit
